@@ -1,6 +1,6 @@
 - Clear Novel Data
-	- javascript:(function()%7BlocalStorage.setItem('data'%2C%20'')%7D)()%3B
+	- ```javascript:(function()%7BlocalStorage.setItem('data'%2C%20'')%7D)()%3B```
 - Toggle Novel Download
-	- javascript:(function()%7Bif (localStorage.enableDownload %3D%3D 'no')%7B%0AlocalStorage.setItem('enableDownload'%2C 'yes')%0A%7D%0A%0Aelse %7B%0AlocalStorage.setItem('enableDownload'%2C 'no')%0A%7D%7D)()%3B
+	- ```javascript:(function()%7Bif (localStorage.enableDownload %3D%3D 'no')%7B%0AlocalStorage.setItem('enableDownload'%2C 'yes')%0A%7D%0A%0Aelse %7B%0AlocalStorage.setItem('enableDownload'%2C 'no')%0A%7D%7D)()%3B```
 - Download Novel Data
-	- javascript:(function()%7Bfunction%20download(filename%2C%20text)%20%7B%0A%20%20var%20element%20%3D%20document.createElement('a')%3B%0A%20%20element.setAttribute('href'%2C%20'data%3Atext%2Fplain%3Bcharset%3Dutf-8%2C'%20%2B%20encodeURIComponent(text))%3B%0A%20%20element.setAttribute('download'%2C%20filename)%3B%0A%20%20element.style.display%20%3D%20'none'%3B%0A%20%20document.body.appendChild(element)%3B%0A%20%20element.click()%3B%0A%20%20document.body.removeChild(element)%3B%7D%0A%0Adownload(document.querySelector('a.novel-title').innerText%20%2B%20'.html'%2C%20localStorage.data)%7D)()%3B
+	- ```javascript:(function()%7Bfunction%20download(filename%2C%20text)%20%7B%0A%20%20var%20element%20%3D%20document.createElement('a')%3B%0A%20%20element.setAttribute('href'%2C%20'data%3Atext%2Fplain%3Bcharset%3Dutf-8%2C'%20%2B%20encodeURIComponent(text))%3B%0A%20%20element.setAttribute('download'%2C%20filename)%3B%0A%20%20element.style.display%20%3D%20'none'%3B%0A%20%20document.body.appendChild(element)%3B%0A%20%20element.click()%3B%0A%20%20document.body.removeChild(element)%3B%7D%0A%0Adownload(document.querySelector('a.novel-title').innerText%20%2B%20'.html'%2C%20localStorage.data)%7D)()%3B```
